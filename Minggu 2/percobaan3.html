@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>percobaan 3 - tabel</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>tabel biasa</p>
+    <table>
+      <tr>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>age</th>
+      </tr>
+      <tr>
+        <td>elon</td>
+        <td>musk</td>
+        <td>51</td>
+      </tr>
+      <tr>
+        <td>bill</td>
+        <td>gates</td>
+        <td>67</td>
+      </tr>
+    </table>
+    <p>colspan</p>
+    <table>
+      <tr>
+        <th colspan="2">Name</th>
+        <th>age</th>
+      </tr>
+      <tr>
+        <td>elon</td>
+        <td>musk</td>
+        <td>51</td>
+      </tr>
+      <tr>
+        <td>bill</td>
+        <td>gates</td>
+        <td>67</td>
+      </tr>
+    </table>
+    <p>rowspan</p>
+    <table>
+      <tr>
+        <th>name</th>
+        <td>elon</td>
+      </tr>
+      <tr>
+        <th rowspan="2">phone</th>
+        <td>12345</td>
+      </tr>
+      <tr>
+        <td>654321</td>
+      </tr>
+    </table>
+  </body>
+</html>

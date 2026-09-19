@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tugas 1</title>
+  </head>
+  <body>
+    <h1>Berbagai macam form</h1>
+
+    <form>
+      <table>
+        <tr>
+          <td>
+            Input 1 memiliki value tetap yang dapat diklik namun tidak dapat
+            diganti
+          </td>
+          <td>
+            <input type="text" name="input1" value="nilai tetap" readonly />
+          </td>
+        </tr>
+
+        <tr>
+          <td>input 2 hanya dapat diisi maksimal 5 karakter.</td>
+          <td><input type="text" name="input2" maxlength="5" /></td>
+        </tr>
+
+        <tr>
+          <td>input 3 tidak dapat diklik ataupun diisi.</td>
+          <td><input type="text" name="input3" disabled /></td>
+        </tr>
+
+        <tr>
+          <td>input 4 wajib diisi.</td>
+          <td><input type="text" name="input4" required /></td>
+        </tr>
+
+        <tr>
+          <td>
+            input 5 hanya dapat diisidengan NIM Anda.(9 karakter,hanya huruf dan
+            angka)
+          </td>
+          <td>
+            <input
+              type="text"
+              name="input5"
+              minlength="9"
+              maxlength="9"
+              pattern="[a-z0-9]{9}"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
