@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>latihan</title>
+  </head>
+  <body>
+    <form id="myForm" onsubmit="return validasiForm();">
+      <table>
+        <tr>
+          <td><label for="nama">Nama</label></td>
+          <td>:</td>
+          <td><input type="text" id="nama" name="nama" /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td>:</td>
+          <td><input type="text" id="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top">
+            <label for="komentar">Komentar</label>
+          </td>
+          <td style="vertical-align: top">:</td>
+          <td>
+            <textarea
+              id="komentar"
+              name="komentar"
+              rows="6"
+              cols="40"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <br />
+            <input type="submit" value="Simpan" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      function validasiForm() {
+        var nama = document.getElementById("nama").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var komentar = document.getElementById("komentar").value.trim();
+
+        if (nama === "" || email === "" || komentar === "") {
+          alert("Semua field wajib diisi!");
+          return false;
+        }
+
+        var regexHuruf = /^[a-zA-Z\s]+$/;
+
+        if (!regexHuruf.test(nama)) {
+          alert(
+            "Field Nama hanya boleh berisi huruf, tidak diperbolehkan ada angka atau simbol!",
+          );
+          return false;
+        }
+
+        alert("Data berhasil disimpan!");
+        return true;
+      }
+    </script>
+  </body>
+</html>

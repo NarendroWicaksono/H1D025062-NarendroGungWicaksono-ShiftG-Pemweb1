@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>latihan</title>
+  </head>
+  <body>
+    <form id="myForm" onsubmit="return validasiForm();">
+      <table>
+        <tr>
+          <td><label for="nilai">Nilai</label></td>
+          <td>:</td>
+          <td><input type="text" id="nilai" name="nilai" /></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <br />
+            <input type="submit" value="Simpan" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      function cekNilai(nilai) {
+        let grade = "";
+
+        if (nilai < 0 || nilai > 100) {
+          grade = "Nilai tidak valid";
+        } else if (nilai <= 20) {
+          grade = "E";
+        } else if (nilai <= 40) {
+          grade = "D";
+        } else if (nilai <= 60) {
+          grade = "C";
+        } else if (nilai <= 80) {
+          grade = "B";
+        } else {
+          grade = "A";
+        }
+
+        return grade;
+      }
+
+      function validasiForm() {
+        var nilai = document.getElementById("nilai").value.trim();
+
+        if (nilai === "") {
+          alert("field wajib diisi!");
+          return false;
+        }
+
+        var regexAngka = /^[0-9]+$/;
+        if (!regexAngka.test(nilai)) {
+          alert("Field nilai tidak diperbolehkan ada huruf atau simbol");
+          return false;
+        }
+        var angka = Number(nilai);
+        var hasilGrade = cekNilai(angka);
+
+        alert("Data berhasil disimpan!\nGrade Anda: " + hasilGrade);
+        return true;
+      }
+    </script>
+  </body>
+</html>

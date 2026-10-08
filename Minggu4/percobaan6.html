@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Praktikum Pemrograman Web</title>
+  </head>
+  <body>
+    <form name="form1" method="POST">
+      <textarea
+        id="question"
+        name="question"
+        cols="60"
+        rows="3"
+        onKeyUp="countMax()"
+      ></textarea>
+      Sisa
+      <input
+        id="counter"
+        name="counter"
+        type="text"
+        size="3"
+        maxlength="3"
+        value="100"
+        readonly
+      />
+    </form>
+    <script>
+      function countMax() {
+        const question = document.getElementById("question");
+        const counter = document.getElementById("counter");
+        const max = 100;
+        let wert = max - question.value.length;
+        if (wert < 0) {
+          alert("Maaf, batas maksimum pengisian adalah " + max + " karakter!");
+          question.value = question.value.substring(0, max);
+          wert = max - question.value.length;
+          counter.value = wert;
+        } else {
+          counter.value = wert;
+        }
+      }
+    </script>
+  </body>
+</html>
